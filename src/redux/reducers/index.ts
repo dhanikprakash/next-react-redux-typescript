@@ -4,7 +4,7 @@ import searchResultReducer from "./searchResultReducer";
 import { SearchState } from "./initialState"
 
 const rootReducer = combineReducers<SearchState>({
-  searchKey: searchQueryReducer,
-  results: searchResultReducer,
+  search: searchQueryReducer,
+  searchResults: searchResultReducer,
 });
 export default rootReducer;

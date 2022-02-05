@@ -3,14 +3,13 @@ import * as searchResultActions from "./searchResultActions";
 import thunk from "redux-thunk";
 import fetchMock from "fetch-mock";
 import configureMockStore from "redux-mock-store";
-import { SearchResult } from "../../../models/Results";
+import { Results } from "../../../models/models";
 
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);
 const results = {};
-const searchKey = "John";
+const search = {query: 'John'};
 const offSet = 0;
-const limit = 10;
 
 describe("Async Actions", () => {
     afterEach(() => {
@@ -28,7 +27,7 @@ describe("Async Actions", () => {
 
             const store = mockStore({ results: {} });
             return store
-                .dispatch(searchResultActions.loadResults(offSet, limit, searchKey))
+                .dispatch(searchResultActions.loadResults(offSet, search))
                 .then(() => {
                     expect(store.getActions()).toEqual(expectedActions);
                 });

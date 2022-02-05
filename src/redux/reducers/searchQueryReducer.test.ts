@@ -4,16 +4,16 @@ import searchQueryReducer from "./searchQueryReducer";
 it("should add searchKey when passed CREATE_SEARCH", () => {
     // arrange
     const initialState = {
-        searchKey: "",
+        search: { query: ''},
         results: {},
     };
 
-    const searchKey = "John";
+    const search = {query: 'John'};
 
-    const action = searchQueryActions.searchQueryActions(searchKey);
+    const action = searchQueryActions.searchQueryActions(search);
     // act
-    const newState = searchQueryReducer(initialState.searchKey, action);
+    const newState = searchQueryReducer(initialState.search, action);
 
     // assert
-    expect(newState).toEqual(searchKey);
+    expect(newState).toEqual(search);
 });

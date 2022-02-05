@@ -1,7 +1,8 @@
 import * as types from "./actionTypes";
+import { Search } from "../../../models/models";
 
-type Actions = { type: string, searchKey: string }
+type Actions = { type: string, search: Search }
 
-export const searchQueryActions = (searchKey: string): Actions => {
-  return { type: types.CREATE_SEARCH, searchKey: searchKey };
+export const searchQueryActions = (search: Search): Actions => {
+  return { type: types.CREATE_SEARCH, search: search };
 }

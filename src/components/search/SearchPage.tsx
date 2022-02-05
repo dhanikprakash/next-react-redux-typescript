@@ -1,13 +1,13 @@
-import * as React from 'react';
-import SearchQuery from './SearchQuery';
-import SearchResponse from './SearchResponse';
+import React from 'react';
+import QueryPage from './QueryPage';
+import ResultsPage from './ResultsPage';
 
 
 const SearchPage: React.FC = () => {
     return (
         <>
-            <SearchQuery></SearchQuery>
-            <SearchResponse></SearchResponse>
+            <QueryPage></QueryPage>
+            <ResultsPage></ResultsPage>
         </>
     )
 }

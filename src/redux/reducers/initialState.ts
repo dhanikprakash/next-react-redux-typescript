@@ -1,11 +1,14 @@
-import { SearchResult } from "../../../models/Results";
+import { Results, Result, Search } from "../../../models/models";
 
 export default {
-  searchKey: '',
-  results: {}
+  search: { query: "" },
+  searchResults: {
+    resultCount: 0,
+    results: [{}],
+  },
 };
 
 export type SearchState = {
-  searchKey: string,
-  results: SearchResult
-}
+  search: Search;
+  searchResults: Results;
+};

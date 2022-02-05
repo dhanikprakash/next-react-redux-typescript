@@ -1,12 +1,12 @@
 import searchResultReducer from "./searchResultReducer";
 import * as types from "../actions/actionTypes";
-import { SearchResult, Result } from "../../../models/Results";
+import { Results } from "../../../models/models";
 
 it("should update results when passed LOAD_RESULT_SUCCESS", () => {
     // arrange
     const initialState = {
-        searchKey: "",
-        results: {
+        search: { query: ''},
+        searchResults: {
             resultCount: 0, results: [{
                 "wrapperType": "track",
                 "kind": "song",
@@ -43,7 +43,7 @@ it("should update results when passed LOAD_RESULT_SUCCESS", () => {
         },
     };
 
-    const data: SearchResult = {
+    const data: Results = {
         resultCount: 1, results: [{
             "wrapperType": "track",
             "kind": "song",
@@ -82,7 +82,7 @@ it("should update results when passed LOAD_RESULT_SUCCESS", () => {
 
     const action = { type: types.LOAD_RESULT_SUCCESS, results: data };
     // act
-    const newState = searchResultReducer(initialState.results, action);
+    const newState = searchResultReducer(initialState.searchResults, action);
 
     // assert
     expect(newState).toEqual(data);

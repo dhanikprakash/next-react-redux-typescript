@@ -31,8 +31,11 @@ export interface Result {
     primaryGenreName: string;
     isStreamable: boolean;
 }
+export interface Search {
+    query: string;
+}
 
-export interface SearchResult {
+export interface Results {
     resultCount: number;
-    results: Result[];
+    results: [Result];
 }
