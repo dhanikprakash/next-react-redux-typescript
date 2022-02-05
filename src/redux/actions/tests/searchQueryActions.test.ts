@@ -1,5 +1,5 @@
-import * as types from "./actionTypes";
-import * as searchQueryActions from "./searchQueryActions";
+import * as types from "../actionTypes";
+import * as searchQueryActions from "../searchQueryActions";
 
 describe("createSearch", () => {
   it("should create a CREATE_SEARCH action", () => {

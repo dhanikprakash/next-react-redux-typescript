@@ -51,7 +51,7 @@ export default function ResultsPage() {
       setResult({
         hasMore: reduxResults.results.length > 0,
         offSet: result.offSet + reduxResults.results.length,
-        items: result.items.concat(reduxResults.results),
+        items: reduxResults.resultCount === 0 ? [] : reduxResults.results,
       });
       if (reduxResults.resultCount === 0 &&
         result.offSet === 0 &&

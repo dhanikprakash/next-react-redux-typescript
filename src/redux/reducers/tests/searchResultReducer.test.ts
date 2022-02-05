@@ -1,6 +1,6 @@
-import searchResultReducer from "./searchResultReducer";
-import * as types from "../actions/actionTypes";
-import { Results } from "../../../models/models";
+import searchResultReducer from "../searchResultReducer";
+import * as types from "../../actions/actionTypes";
+import { Results } from "../../../../models/models";
 
 it("should update results when passed LOAD_RESULT_SUCCESS", () => {
     // arrange

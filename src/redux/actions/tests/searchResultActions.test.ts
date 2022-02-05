@@ -1,9 +1,9 @@
-import * as types from "./actionTypes";
-import * as searchResultActions from "./searchResultActions";
+import * as types from "../actionTypes";
+import * as searchResultActions from "../searchResultActions";
 import thunk from "redux-thunk";
 import fetchMock from "fetch-mock";
 import configureMockStore from "redux-mock-store";
-import { Results } from "../../../models/models";
+import { Results } from "../../../../models/models";
 
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);
