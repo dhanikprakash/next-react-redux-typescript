@@ -27,7 +27,7 @@ const defaultState: DefaultState = {
   items: [],
 };
 
-export default function ResultsPage() {
+const  ResultsPage:React.FC = () =>  {
 
   const dispatch = useDispatch();
   const [offSet, setOffSet] = useState<number>(0);
@@ -112,3 +112,5 @@ export default function ResultsPage() {
     </>
   );
 }
+
+export default ResultsPage;

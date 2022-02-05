@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import SearchPage from "./search/SearchPage";
+import SearchContainer from "./search/SearchContainer";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
@@ -10,7 +10,7 @@ const App: React.FC = () => {
     <>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={SearchPage} />
+          <Route exact path="/" component={SearchContainer} />
         </Switch>
         <ToastContainer position="top-right" />
       </BrowserRouter>
