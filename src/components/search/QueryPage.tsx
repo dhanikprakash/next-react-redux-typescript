@@ -28,7 +28,7 @@ const QueryPage: React.FC = () => {
         const search: Search = { query:searhText.replace(/ /g, '+') };
         dispatch(searchQueryActions(search))
     };
-
+   
     return (
         <>
             <Card

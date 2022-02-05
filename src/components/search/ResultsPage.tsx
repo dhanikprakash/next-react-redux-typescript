@@ -29,35 +29,42 @@ const defaultState: DefaultState = {
 
 export default function ResultsPage() {
 
-
+  const dispatch = useDispatch();
   const [offSet, setOffSet] = useState<number>(0);
   const classes: Record<'root' | 'title' | 'pos', string> = useStyles();
   const reduxSearch: Search = useSelector((state: SearchState) => state.search);
   const reduxResults: Results = useSelector((state: SearchState) => state.searchResults);
   const [result, setResult] = useState<DefaultState>(defaultState);
-  const dispatch = useDispatch();
+  const noMatchingResults = (): boolean =>  {
+    return reduxResults.resultCount === 0 &&
+      result.offSet === 0 &&
+      reduxSearch.query != null &&
+      reduxSearch.query !== '';
+  }
 
+  const loadMore = ():void => {
+    setOffSet(result.offSet);
+  };
 
   useEffect(() => {
     if (reduxSearch !== null && reduxSearch.query === '') {
       //reset when searchKey changes
       setResult(defaultState);
     }
-    dispatch(loadResults(offSet, reduxSearch));
-  }, [dispatch, reduxSearch, offSet]);
+      dispatch(loadResults(offSet, reduxSearch));
+  }, [dispatch, reduxSearch, reduxSearch.query, offSet]);
 
   useEffect(() => {
-    if (reduxResults != null && reduxResults.resultCount >= 0) {
-      setResult({
-        hasMore: reduxResults.results.length > 0,
-        offSet: result.offSet + reduxResults.results.length,
-        items: reduxResults.resultCount === 0 ? [] : reduxResults.results,
-      });
-      if (reduxResults.resultCount === 0 &&
-        result.offSet === 0 &&
-        reduxSearch.query != null &&
-        reduxSearch.query !== ''
-      ) {
+    if (reduxResults != null) {
+
+      if(reduxResults.resultCount > 0){
+        setResult({
+          hasMore: reduxResults.results.length > 0,
+          offSet: result.offSet + reduxResults.results.length,
+          items:  result.items.concat(reduxResults.results),
+        });
+      }
+      if (noMatchingResults()) {
         toast.warn('No Matching Results', {
           position: 'top-right',
           autoClose: 3000,
@@ -69,10 +76,6 @@ export default function ResultsPage() {
     }
   
   }, [reduxResults]);
-
-  const loadMore = () => {
-    setOffSet(result.offSet);
-  };
 
   return (
     <>

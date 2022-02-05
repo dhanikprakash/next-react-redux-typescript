@@ -12,7 +12,7 @@ export default function searchResultReducer(
     case types.LOAD_RESULT_SUCCESS:
       return {...state, 
         resultCount: action.payload.resultCount, 
-        results: state.results.concat(action.payload.results)}
+        results: action.payload.results}
     default:
       return state;
   }
