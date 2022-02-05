@@ -1,6 +1,6 @@
-import * as types from "./actionTypes";
-import * as searchApi from "../../api/searchApi";
-import { Results, Search } from "../../../models/models";
+import * as types from './actionTypes';
+import * as searchApi from '../../api/searchApi';
+import { Results, Search } from '../../../models/models';
 
 type Actions = { type: string, payload: Results }
 
@@ -15,7 +15,7 @@ export const loadResults = (offSet: number, search: Search): any => {
       dispatch(loadResultSuccess(results));
     } catch (error) {
       // In real app, dispatch error handlers.
-      console.log("Api call error");
+      console.log('Api call error');
     }
   };
 }

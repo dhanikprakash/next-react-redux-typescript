@@ -1,8 +1,8 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import rootReducer from "./index";
-import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
-import thunk from "redux-thunk";
-import { SearchState } from "./initialState"
+import { createStore, applyMiddleware, compose } from 'redux';
+import rootReducer from './index';
+import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
+import thunk from 'redux-thunk';
+import { SearchState } from './initialState'
 
 declare global {
   interface Window {

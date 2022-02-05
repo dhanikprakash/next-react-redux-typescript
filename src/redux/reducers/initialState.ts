@@ -1,7 +1,7 @@
-import { Results, Result, Search } from "../../../models/models";
+import { Results, Result, Search } from '../../../models/models';
 
 export default {
-  search: { query: "" },
+  search: { query: '' },
   searchResults: {
     resultCount: 0,
     results: [{}],

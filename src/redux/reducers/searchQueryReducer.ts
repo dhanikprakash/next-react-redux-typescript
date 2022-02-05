@@ -1,6 +1,6 @@
-import * as types from "../actions/actionTypes";
-import initialState from "./initialState";
-import { Search } from "../../../models/models";
+import * as types from '../actions/actionTypes';
+import initialState from './initialState';
+import { Search } from '../../../models/models';
 type Actions = { type: string, payload: Search }
 
 export default function searchQueryReducer(

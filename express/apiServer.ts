@@ -1,19 +1,19 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const port = process.env.PORT || 3001;
 const searchRouter = express.Router();
-const fetch1 = require("node-fetch");
+const fetch1 = require('node-fetch');
 
-app.get("/", (req, res) => {
-  res.send("Next-React-Redux API");
+app.get('/', (req, res) => {
+  res.send('Next-React-Redux API');
 });
-app.use("/api", searchRouter);
+app.use('/api', searchRouter);
 
 app.listen(port, () => {
   console.log(`Running on ${port}`);
 });
 
-searchRouter.route("/search").get((req, res) => {
+searchRouter.route('/search').get((req, res) => {
   const queryParms = parseQuery(req);
   fetch1(
     `https://itunes.apple.com/search?media=${queryParms.media}&offset=${queryParms.offset}&limit=${queryParms.limit}&term=${queryParms.term}`

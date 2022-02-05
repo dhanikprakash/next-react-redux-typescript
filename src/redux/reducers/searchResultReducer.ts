@@ -1,6 +1,6 @@
 import { Results } from './../../../models/models';
-import * as types from "../actions/actionTypes";
-import initialState from "./initialState";
+import * as types from '../actions/actionTypes';
+import initialState from './initialState';
 
 type Actions = { type: string, payload: Results }
 

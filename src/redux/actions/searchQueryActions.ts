@@ -1,5 +1,5 @@
-import * as types from "./actionTypes";
-import { Search } from "../../../models/models";
+import * as types from './actionTypes';
+import { Search } from '../../../models/models';
 
 type Actions = { type: string, payload: Search }
 
