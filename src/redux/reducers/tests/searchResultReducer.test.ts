@@ -7,7 +7,7 @@ it('should update results when passed LOAD_RESULT_SUCCESS', () => {
     const initialState = {
         search: { query: ''},
         searchResults: {
-            resultCount: 0, results: [{
+            resultCount: 0, payload: [{
                 'wrapperType': 'track',
                 'kind': 'song',
                 'artistId': 208469,
@@ -82,7 +82,7 @@ it('should update results when passed LOAD_RESULT_SUCCESS', () => {
 
     const action = { type: types.LOAD_RESULT_SUCCESS, results: data };
     // act
-    const newState = searchResultReducer(initialState.searchResults, action);
+    const newState = searchResultReducer(initialState.searchResults, action.results);
 
     // assert
     expect(newState).toEqual(data);

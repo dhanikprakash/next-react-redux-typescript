@@ -7,7 +7,7 @@ describe('createSearch', () => {
     const search = {query: 'John'};
     const expectedAction = {
       type: types.CREATE_SEARCH,
-      action: search,
+      payload: search,
     };
 
     //act

@@ -3,7 +3,7 @@ import QueryPage from './QueryPage';
 import ResultsPage from './ResultsPage';
 
 
-const SearchPage: React.FC = () => {
+const SearchContainer: React.FC = () => {
     return (
         <>
             <QueryPage></QueryPage>
@@ -11,4 +11,4 @@ const SearchPage: React.FC = () => {
         </>
     )
 }
-export default SearchPage;
+export default SearchContainer;

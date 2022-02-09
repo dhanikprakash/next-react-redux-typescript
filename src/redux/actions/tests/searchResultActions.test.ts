@@ -3,7 +3,6 @@ import * as searchResultActions from '../searchResultActions';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 import configureMockStore from 'redux-mock-store';
-import { Results } from '../../../../models/models';
 
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);
@@ -23,9 +22,9 @@ describe('Async Actions', () => {
                 headers: { 'content-type': 'application/json' },
             });
 
-            const expectedActions = [{ type: types.LOAD_RESULT_SUCCESS, results }];
+            const expectedActions = [{ type: types.LOAD_RESULT_SUCCESS, payload:results }];
 
-            const store = mockStore({ results: {} });
+            const store = mockStore({ payload: {} });
             return store
                 .dispatch(searchResultActions.loadResults(offSet, search))
                 .then(() => {
